@@ -1,0 +1,13 @@
+.landing{
+    display: flex;
+    margin: 4% 25%;
+    box-shadow: 0px 20px 20px 20px rgb(0 0 0 / 10%);
+    background: #94947bad;
+    border-radius: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.link{
+    color: white;
+    text-decoration: none;
+}

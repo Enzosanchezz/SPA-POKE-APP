@@ -1,0 +1,144 @@
+import React from "react";
+import { useState, useEffect } from "react";
+import {useDispatch, useSelector} from "react-redux";
+import { Link } from "react-router-dom";
+import { filterAttack, filterCreated, filterOrder, filterType, getPokemons, getType } from "../../actions";
+import Card from "../Card/Card";
+import Paginado from "../Paginado/Paginado";
+import Search from "../Search/Search";
+import style from "./style.module.css";
+
+export default function Home(){
+
+    const dispatch = useDispatch();
+    const allPokemons = useSelector((state) => state.pokemons)
+    const allType = useSelector((state) => state.types)
+    const [order, setOrder] = useState('');
+
+    /////////////////////paginado////////////////////////
+    
+    const [page, setPage] = useState(1)
+    const [pokePage, setPokePage] = useState(12);
+
+    const  lastPoke = page * pokePage;
+    const firtsPoke = lastPoke - pokePage;
+    const currentPoke = allPokemons.slice(firtsPoke, lastPoke);
+
+
+    const prevPage = (e) => {
+        e.preventDefault();
+        if(page > 1){
+            setPage(page - 1)
+        }else{alert("No hay paginas Previas")}
+    }
+    const nextPage = (e) =>{
+        e.preventDefault();
+        if(Math.ceil(allPokemons.length / 12) > page ){
+            setPage(page + 1)
+        }else{alert("No hay mas Paginas")}
+    }
+
+    /////////////////////////////////////////////////////
+    
+    useEffect(() =>{
+        dispatch(getPokemons())
+        dispatch(getType())
+    },[dispatch])
+
+
+    const handleVolver = (e) =>{
+        e.preventDefault()
+        dispatch(getPokemons())
+    }
+
+    const handleCreated = (e) =>{
+        dispatch(filterCreated(e.target.value))
+    }
+
+    const handleType = (e) =>{
+        e.preventDefault()
+        dispatch(filterType(e.target.value))
+        setPage(1)
+    }
+    function handleOrder(e){
+        e.preventDefault();
+        dispatch(filterOrder(e.target.value))
+        setPage(1)
+        setOrder(`ordenado ${e.target.value}`)
+    }
+
+    function handleAttack(e){
+        e.preventDefault();
+        dispatch(filterAttack(e.target.value))
+        setPage(1)
+        setOrder(`ordenado ${e.target.value}`)
+    }
+
+    return(
+    <div>
+        <span className={style.span} >
+
+            <div className={style.divHome} >
+                    <h2>My pokemons</h2>
+            </div>
+                <button className={style.botonVolverCargar} onClick={(e) => handleVolver(e)} >&nbsp;&nbsp;↻&nbsp;&nbsp;</button>
+                <Link to={"/pokemons"} className={style.creaPokemon} >
+                <button className={style.boton} >Crear un Pokemon</button>
+                </Link>
+                <Search/>
+        </span>
+        <div>
+                <select className={style.select} onChange={e => {handleOrder(e)}} >
+                    <option value= "alphabeticalOrder">Alphabetical Order</option>
+                    <option value= "asc">Ascendente A-Z</option>
+                    <option value= "desc">Descendente Z-A</option>
+                </select>
+                <select className={style.select} onChange={e => {handleAttack(e)}}>
+                    <option value= "attack">Attack</option>
+                    <option value= "attackMin">Attack Min</option>
+                    <option value= "attackMax">Attack Max</option>
+                </select>
+                <select className={style.select} onChange={(e) => handleType(e)} >
+                    <option value="All">Types</option>
+                    {
+                    allType?.map((d, i)=> (
+                        <option key={i} value={d.name}>{d.name}</option>
+                    ))}
+                </select>
+                <select className={style.select} onChange={(e) => handleCreated(e)} >
+                    <option value="all">All</option>
+                    <option value="created">Created</option>
+                    <option value="api">Api</option>
+                </select>
+                        <br />
+                <button className={style.btn} onClick={(e) => prevPage(e)} > ⏮ Prev</button>
+                <button className={style.btn} onClick={(e) => nextPage(e)} >Next ⏭</button>
+                <Paginado 
+                pokePage={pokePage}
+                allPokemons={allPokemons.length}
+                />
+                
+        
+        </div>
+        <div>
+           
+            {
+                currentPoke? currentPoke.map((r , i) => {
+                    // console.log('currentPoke :>> ', currentPoke);
+                    return(
+                        <div className={style.cards} key={i}>
+                            <Link to={"/home/" + r.id} className={style.link} >
+                            <Card 
+                            name = {r.name}
+                            types = {r.types+ "  " }
+                            img = {r.img}
+                            />
+                            </Link>
+                        </div>
+                    )
+                }) : null
+            }
+        </div>
+    </div>
+    )
+}
