@@ -11,7 +11,7 @@ export function getPokemons(){
 
 export function getNamePokemons(name){
     return async function(dispatch){
-            let pokName = await axios.get(`${SERVER}/pokemons?name=${name}`)
+            let pokName = await axios.get(`${SERVER}/pokemons?name=${name}`) 
             return dispatch({type : "GET_NAME_POKEMON", payload: pokName.data})
     }
 }
