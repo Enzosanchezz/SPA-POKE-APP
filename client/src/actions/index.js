@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const SERVER = "http://localhost:3001"
+const SERVER = "https://spa-poke-app.herokuapp.com"
+// const SERVER = "http://localhost:3001"
 
 export function getPokemons(){
     return async function(dispatch){
