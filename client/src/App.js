@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import Detail from './components/Detail/Detail';
 import Created from './components/Created/Created';
 import Modified from './components/Modified/Modified';
+import Favs from './components/Favs/Favs';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/home/:id" component={Detail}></Route>
           <Route exact path="/pokemons" component={Created}></Route>
           <Route path="/pokemons/:id" component={Modified}></Route>
+          <Route path="/favs" component={Favs}></Route>
         </Switch>
       </div>
     </BrowserRouter>
