@@ -3,22 +3,31 @@ const initalState = {
     allPokemons : [],
     details : [],
     types : [],
+    favs : [],
 }
 
 function rootReducer(state = initalState, action){
 
 switch(action.type){
-    case "GET_POKEMONS": { return {...state, pokemons: action.payload, allPokemons: action.payload, details : []}}
+    case "GET_POKEMONS": { return {...state, pokemons: action.payload, allPokemons: action.payload, }}
 
     case "GET_NAME_POKEMON":{return {...state, pokemons: action.payload}}
 
     case "GET_DETAILS": {return {...state, details : action.payload}}
+
+    case "DELETE_DETAIL":{return {...state, details : action.payload}}
     
     case "GET_TYPE":{return{...state, types: action.payload}}
 
     case "POST_POKEMON": return{...state}
 
     case "PUT_POKEMON" : return {...state}
+
+    case "ADD_FAV" : return {...state, favs : [...state.favs.concat(action.payload)]}
+
+    case "DELETE_FAV" : 
+    const deleteF = state.favs.filter((f) => f.id != action.payload)
+    return {...state, favs : deleteF}
 
     case "FILTER_CREATED": {
         const filter = action.payload === "created" ? state.allPokemons.filter((c) => c.createdInDb) : state.allPokemons.filter((a) => !a.createdInDb)
