@@ -16,7 +16,6 @@ export default function Detail(props){
 
     const myPoke = useSelector((state) => state.details)
     const pokeFav = useSelector((state) => state.favs)
-    console.log('pokeFav', pokeFav)
 
     const handleFavs = () =>{
         dispatch(addFav(myPoke))
