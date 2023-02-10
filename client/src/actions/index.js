@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const SERVER = "http://localhost:3001"
+const SERVER = "https://api-poke.up.railway.app"
 
 export function getPokemons(){
     return async function(dispatch){
