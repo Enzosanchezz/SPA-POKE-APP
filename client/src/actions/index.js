@@ -1,6 +1,8 @@
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const SERVER = "https://api-poke.up.railway.app"
+// const SERVER = "http://localhost:3001"
 
 export function getPokemons(){
     return async function(dispatch){
@@ -11,8 +13,17 @@ export function getPokemons(){
 
 export function getNamePokemons(name){
     return async function(dispatch){
+        try {
             let pokName = await axios.get(`${SERVER}/pokemons?name=${name}`) 
             return dispatch({type : "GET_NAME_POKEMON", payload: pokName.data})
+        } catch (error) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `No existe Pokemon llamado ${name} `,
+              })
+        }
+            
     }
 }
 
@@ -71,6 +82,25 @@ export function filterAttack(payload){
     return{
         type: "FILTER_ATTACK",
         payload
+    }
+}
+export function addFav(payload){
+    return{
+        type: "ADD_FAV",
+        payload
+    }
+}
+export function deleteFav(payload){
+    return{
+        type: "DELETE_FAV",
+        payload
+    }
+}
+export function deleteDetail(){
+    let array = []
+    return {
+        type: "DELETE_DETAIL",
+        payload : array
     }
 }
 

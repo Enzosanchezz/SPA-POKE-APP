@@ -41,21 +41,33 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     box-shadow: 7px 13px 37px #000;
 }
-.input{
-    /* display: flex; */
-    /* justify-content: center; */
-    width: 378px;
-    background-color:#fbff003a;
+.divInput{
+    display: flex;
+    width: 380px;
+    margin-left: 640px;
+    background-color: #fbff003a;
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 15px;
     margin-bottom: 16px;
+    margin-top: 16px;
     border: 1px solid #ff8800a8;
     font-size: 18px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.input{
+    border-radius: 10px;
+    background-color: rgba(226, 184, 16, 0.532);
+    width: 60%;
 }
 
 .button{
-    width: 100%;
-    background-color: #f3f3f375;
+    cursor : pointer;
+    width: 12%;
+    border-radius: 10px;
+    background-color: #8a2525a4;
     border: none;
     padding: 12px;
     color: white;
