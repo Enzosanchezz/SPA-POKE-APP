@@ -21,7 +21,7 @@ function App() {
           <Route path="/favs" component={Favs}></Route>
         </Switch>
       </div>
-    </BrowserRouter>
+    </BrowserRouter> 
   );
 }
 
