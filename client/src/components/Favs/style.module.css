@@ -1,3 +1,9 @@
+@media (max-width: 700px) {
+   .h2{
+       display: none;
+   }
+}
+
 .conteiner{
     width: 100%;
     max-width: 1200px;

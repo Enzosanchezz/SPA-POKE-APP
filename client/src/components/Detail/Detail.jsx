@@ -6,6 +6,7 @@ import { addFav, detailPoke, putPokemon } from "../../actions";
 import Modified from "../Modified/Modified";
 import style from "./style.module.css";
 import { BsStarFill } from "react-icons/bs";
+import { BsArrowLeft } from "react-icons/bs";
 import { AiFillEdit } from "react-icons/ai";
 
 export default function Detail(props){
@@ -33,7 +34,7 @@ export default function Detail(props){
                     <button className={style.boton} >Favoritos</button>
                 </Link>
                 </div>
-                <Link to={"/home"} className={style.link} >🢀 Volver</Link>
+                <Link to={"/home"} className={style.link} ><BsArrowLeft/></Link>
             </span>
             {
                     myPoke.length > 0 ? 

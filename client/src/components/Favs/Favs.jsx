@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { BsArrowLeft } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { deleteFav } from "../../actions";
@@ -17,8 +18,8 @@ return(
     <div>
 
      <span className={style.span} >
-                <h2>My pokemons</h2>
-                <Link to={"/home"} className={style.link} >🢀 Volver</Link>
+                <h2 className={style.h2} >My pokemons</h2>
+                <Link to={"/home"} className={style.link} ><BsArrowLeft/></Link>
      </span>
      <div className={style.conteiner} >
              

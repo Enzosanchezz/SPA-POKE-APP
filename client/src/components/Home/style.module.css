@@ -1,9 +1,10 @@
 @media (max-width: 700px) {
- .span{
-    width: 100%;
-    border-bottom-left-radius: none;
-    border-bottom-right-radius: none;
+
+ .botonVolverCargar{
+    display: none;
  }
+ 
+
     
 }
 
@@ -39,7 +40,7 @@
     -webkit-box-shadow: 10px 10px 15px 0px rgba(0,0,0,1);
     -moz-box-shadow: 10px 10px 15px 0px rgba(0,0,0,1);
     box-shadow: 10px 10px 15px 0px rgba(0,0,0,1);
-    width: 90%;
+    /* width: 90%; */
     height: 45px;
     margin: auto;
     margin-bottom: 2%;
@@ -61,8 +62,8 @@
     border-radius: 10px;
     border: 0.1px solid rgba(255, 208, 0, 0.575);
     padding: 5px 4px 5px 4px;
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     background-color: rgba(255, 208, 0, 0.575);
 }
 .divHome{

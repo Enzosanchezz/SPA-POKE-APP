@@ -35,7 +35,7 @@ export default function Search(){
             type="text" 
             onChange={(e) => setName(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleEnter(name)} 
-            placeholder="Busca tu pokemon" />
+            placeholder="Buscar" />
             <button 
             className={style.button} 
             type="submit"  

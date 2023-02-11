@@ -4,6 +4,8 @@ import { Link, useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
 import { getType, postPokemon } from "../../actions";
 import style from "./style.module.css";
+import { BsArrowLeft } from "react-icons/bs";
+
 
 export default function Created(){
     const dispatch = useDispatch();
@@ -119,8 +121,8 @@ export default function Created(){
     return(
         <div>
             <span className={style.divHome} >
-            <h1>Crea tu Pokemon</h1>
-            <Link to={"/home"} className={style.link} >🢀 Volver</Link>
+            <h1 className={style.h1} >Crea tu Pokemon</h1>
+            <Link to={"/home"} className={style.link} ><BsArrowLeft/></Link>
             </span>
 
             <form onSubmit={e => handleSubmit(e)} >

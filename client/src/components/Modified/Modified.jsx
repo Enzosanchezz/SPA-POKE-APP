@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BsArrowLeft } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -101,7 +102,7 @@ export default function Modified(props){
         <div>
             <span className={style.divHome} >
             <h1 className={style.h1} >Modifica tu Pokemon</h1>
-            <Link to={"/home"} className={style.link} >🢀 Volver</Link>
+            <Link to={"/home"} className={style.link} ><BsArrowLeft/></Link>
             </span>
 
             <form onSubmit={e => handleSubmit(e)} >
