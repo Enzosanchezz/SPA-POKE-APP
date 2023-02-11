@@ -119,8 +119,8 @@ export default function Created(){
     return(
         <div>
             <span className={style.divHome} >
-            <Link to={"/home"} className={style.link} >🢀 Volver</Link>
             <h1>Crea tu Pokemon</h1>
+            <Link to={"/home"} className={style.link} >🢀 Volver</Link>
             </span>
 
             <form onSubmit={e => handleSubmit(e)} >

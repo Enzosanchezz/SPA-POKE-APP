@@ -100,8 +100,8 @@ export default function Modified(props){
     return(
         <div>
             <span className={style.divHome} >
+            <h1 className={style.h1} >Modifica tu Pokemon</h1>
             <Link to={"/home"} className={style.link} >🢀 Volver</Link>
-            <h1>Modifica tu Pokemon</h1>
             </span>
 
             <form onSubmit={e => handleSubmit(e)} >

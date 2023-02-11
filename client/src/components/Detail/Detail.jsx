@@ -6,6 +6,7 @@ import { addFav, detailPoke, putPokemon } from "../../actions";
 import Modified from "../Modified/Modified";
 import style from "./style.module.css";
 import { BsStarFill } from "react-icons/bs";
+import { AiFillEdit } from "react-icons/ai";
 
 export default function Detail(props){
     
@@ -26,7 +27,6 @@ export default function Detail(props){
     return(
         <div>
             <span className={style.span} >
-                <h2>My pokemons</h2>
                 <div className={style.divF} >
 
                 <Link to={"/favs"} className={style.link} >
@@ -42,7 +42,7 @@ export default function Detail(props){
                         <div  >
 
                          {myPoke[0].createdInDb == true ?
-                        <Link to={`/pokemons/${props.match.params.id}`} className={style.link} >Modificar</Link> :
+                        <Link to={`/pokemons/${props.match.params.id}`} className={style.link} ><AiFillEdit/></Link> :
                         null}
                         {
                             pokeFav.length > 0 && pokeFav.find((p) => p.id == (myPoke[0].id)) ? null :

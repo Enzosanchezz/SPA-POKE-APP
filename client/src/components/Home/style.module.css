@@ -1,3 +1,12 @@
+@media (max-width: 700px) {
+ .span{
+    width: 100%;
+    border-bottom-left-radius: none;
+    border-bottom-right-radius: none;
+ }
+    
+}
+
 .cards{
     display: inline-flex;
     justify-content: space-around;

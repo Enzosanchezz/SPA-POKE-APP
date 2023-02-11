@@ -1,4 +1,12 @@
+@media (max-width: 700px) {
+ .input{
+    width: 45%;
+ }
+  
+    
+}
 .searchBar{
+    width: 20%;
     display: flex;
     justify-content: end;
 }
