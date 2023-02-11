@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { getNamePokemons } from "../../actions";
 import style from "./style.module.css";
 import Swal from 'sweetalert2'
+import { BsSearch } from "react-icons/bs";
 
 export default function Search(){
     const dispatch = useDispatch()
@@ -40,7 +41,7 @@ export default function Search(){
             type="submit"  
             onClick={handleSubmit}
             >
-            Buscar
+            <BsSearch/>
             </button>
         </div>
     )

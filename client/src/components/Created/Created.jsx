@@ -135,38 +135,38 @@ export default function Created(){
                     <label>Imagen: </label>
                     <input className={style.input} type="text" value={input.img} name="img" onChange={e =>  handleChange(e)}/>
                
-                    <label>Hp:</label>
+                    <label>Vida:</label>
                     <input className={style.input} type="number"  value={input.hp} name="hp" onChange={e =>  handleChange(e) }/>
                     {errors.hp && <p>{errors.hp}</p>}
                 
-                    <label>Attack: </label>
+                    <label>Ataque: </label>
                     <input className={style.input} type="number"  value={input.attack} name="attack" onChange={e =>  handleChange(e)}/>
                     {errors.attack && <p>{errors.attack}</p>}
               
-                    <label>Defense:</label>
+                    <label>Defensa:</label>
                     <input className={style.input} type="number"  value={input.defense} name="defense" onChange={e =>  handleChange(e)}/>
                     {errors.defense && <p>{errors.defense}</p> }
                
-                    <label>Speed:</label>
+                    <label>Velocidad:</label>
                     <input className={style.input} type="number"  value={input.speed} name="speed" onChange={e =>  handleChange(e)}/>
                     {errors.speed && <p>{errors.speed}</p> }
                 
-                    <label>Height:</label>
+                    <label>Altura:</label>
                     <input className={style.input} type="number" value={input.height} name="height" onChange={e =>  handleChange(e)}/>
                     {errors.height && <p>{errors.height}</p> }
              
-                    <label>Weight:</label>
+                    <label>Peso:</label>
                     <input className={style.input} type="number"  value={input.weight} name="weight" onChange={e =>  handleChange(e)}/>
                     {errors.weight && <p>{errors.weight}</p> }
-              
+
+                    <label>Tipo:</label>
+                    <select className={style.select} onChange={e => handleSelect(e)}>
+                        {
+                        tipos.map((d)=> (
+                            <option key={d.id + d.name} value={d.name} >{d.name}</option>
+                        ))}
+                    </select>
                 </div>
-                <select onChange={e => handleSelect(e)}>
-                    {
-                    tipos.map((d)=> (
-                        <option key={d.id + d.name} value={d.name} >{d.name}</option>
-                    ))}
-                </select>
-                <br />
 
                 <div>
                     <ul>

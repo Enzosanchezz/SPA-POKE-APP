@@ -9,6 +9,7 @@ import Favs from "../Favs/Favs";
 import Paginado from "../Paginado/Paginado";
 import Search from "../Search/Search";
 import style from "./style.module.css";
+import { AiFillFastForward , AiFillFastBackward } from "react-icons/ai";
 
 export default function Home(){
 
@@ -79,11 +80,9 @@ export default function Home(){
 
     return(
     <div>
-        <span className={style.span} >
-
-            <div className={style.divHome} >
-                    <h2>My pokemons</h2>
-            </div>
+        <div className={style.span} >
+            {/* <div className={style.divHome} >
+            </div> */}
                 <button className={style.botonVolverCargar} onClick={(e) => handleVolver(e)} >&nbsp;&nbsp;↻&nbsp;&nbsp;</button>
                 <Link to={"/pokemons"} className={style.creaPokemon} >
                 <button className={style.boton} >Crear un Pokemon</button>
@@ -93,7 +92,7 @@ export default function Home(){
                 </Link>
                 
                 <Search/>
-        </span>
+             </div>
         <div>
                 <select className={style.select} onChange={e => {handleOrder(e)}} >
                     <option value= "alphabeticalOrder">Orden Alfabetico</option>
@@ -118,8 +117,7 @@ export default function Home(){
                     <option value="api">Api</option>
                 </select>
                         <br />
-                <button className={style.btn} onClick={(e) => prevPage(e)} > ⏮ Prev</button>
-                <button className={style.btn} onClick={(e) => nextPage(e)} >Next ⏭</button>
+                
                 <Paginado 
                 pokePage={pokePage}
                 allPokemons={allPokemons.length}
@@ -143,6 +141,8 @@ export default function Home(){
                 }) : null
             }
         </div>
+            <button className={style.btn} onClick={(e) => prevPage(e)} ><AiFillFastBackward/></button>
+            <button className={style.btn} onClick={(e) => nextPage(e)} ><AiFillFastForward/></button>
     </div>
     )
 }

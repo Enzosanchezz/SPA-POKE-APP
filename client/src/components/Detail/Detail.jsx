@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { addFav, detailPoke, putPokemon } from "../../actions";
 import Modified from "../Modified/Modified";
 import style from "./style.module.css";
+import { BsStarFill } from "react-icons/bs";
 
 export default function Detail(props){
     
@@ -36,9 +37,9 @@ export default function Detail(props){
             </span>
             {
                     myPoke.length > 0 ? 
-                    <div>
+                    <div className={style.details}>
                         
-                        <div className={style.details} >
+                        <div  >
 
                          {myPoke[0].createdInDb == true ?
                         <Link to={`/pokemons/${props.match.params.id}`} className={style.link} >Modificar</Link> :

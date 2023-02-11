@@ -27,6 +27,9 @@
     color: black;
 }
 .li{
+    font-family: 'Verdana', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
     list-style:none
 }
 .form{
@@ -45,7 +48,7 @@
 .divInput{
     display: flex;
     width: 380px;
-    margin-left: 640px;
+    margin:auto ; 
     background-color: #fbff003a;
     padding: 10px;
     border-radius: 15px;
@@ -74,4 +77,23 @@
     color: white;
     margin:16px 0;
     font-size: 16px;
+}
+/* .select{
+    border-radius: 15px;
+    background-color: rgba(226, 184, 16, 0.532);
+} */
+.select {
+    font-family: 'Verdana', sans-serif;
+    font-weight: 400;
+    appearance: none;
+    padding: 15px 20px; 
+    border-radius: 15px;
+    border: 1px solid rgba(226, 184, 16, 0.532);
+    background-color: rgba(226, 184, 16, 0.532);
+    color: #040404;
+    font-size: 15px;
+}
+ 
+.select:focus {
+    outline: none;
 }
