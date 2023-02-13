@@ -2,7 +2,7 @@ const { Pokemon, Types } = require("../db");
 const { v4: uuidv4 } = require("uuid");
 const axios = require("axios");
 
-const {LOCALHOST_URL} = process.env;
+// const {LOCALHOST_URL} = process.env;
    
 const getApi = async () => {
     try {
