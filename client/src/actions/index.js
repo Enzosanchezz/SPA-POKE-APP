@@ -1,8 +1,8 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 
-const SERVER = "https://api-poke.up.railway.app"
-// const SERVER = "http://localhost:3001"
+// const SERVER = "https://api-poke.up.railway.app"
+const SERVER = "http://localhost:3001"
 
 export function getPokemons(){
     return async function(dispatch){
