@@ -126,8 +126,11 @@ export default function Home(){
         </div>
         <div>
     
-            {
-                currentPoke? currentPoke.map((r , i) => {
+            { 
+             !currentPoke.length ? <Loader style="margin: 0px 0px 50px 0px" /> :
+            currentPoke? 
+                     
+                currentPoke.map((r , i) => {
                     return(
                         <div className={style.cards} key={i}>
                             <Link to={"/home/" + r.id} className={style.link} >
@@ -139,8 +142,8 @@ export default function Home(){
                             </Link>
                         </div>
                     )
-                }) : <Loader/>
-            }
+                }) : null
+            } 
         </div>
             <button className={style.btn} onClick={(e) => prevPage(e)} ><AiFillFastBackward/></button>
             <button className={style.btn} onClick={(e) => nextPage(e)} ><AiFillFastForward/></button>
