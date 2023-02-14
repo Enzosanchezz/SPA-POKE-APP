@@ -10,6 +10,7 @@ import Paginado from "../Paginado/Paginado";
 import Search from "../Search/Search";
 import style from "./style.module.css";
 import { AiFillFastForward , AiFillFastBackward } from "react-icons/ai";
+import Loader from "../loader/Loader";
 
 export default function Home(){
 
@@ -138,7 +139,7 @@ export default function Home(){
                             </Link>
                         </div>
                     )
-                }) : null
+                }) : <Loader/>
             }
         </div>
             <button className={style.btn} onClick={(e) => prevPage(e)} ><AiFillFastBackward/></button>

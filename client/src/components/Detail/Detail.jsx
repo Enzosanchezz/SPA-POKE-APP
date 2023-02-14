@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useHistory, useParams} from "react-router-dom";
+import { Link} from "react-router-dom";
 import Swal from "sweetalert2";
 import { addFav, detailPoke, putPokemon } from "../../actions";
 import Modified from "../Modified/Modified";
@@ -8,6 +8,7 @@ import style from "./style.module.css";
 import { BsStarFill } from "react-icons/bs";
 import { BsArrowLeft } from "react-icons/bs";
 import { AiFillEdit } from "react-icons/ai";
+import Loader from "../loader/Loader";
 
 export default function Detail(props){
     
@@ -24,7 +25,7 @@ export default function Detail(props){
         dispatch(addFav(myPoke))
         Swal.fire(`${myPoke[0].name} fue agregado a favoritos `)
     }
-
+   
     return(
         <div>
             <span className={style.span} >
@@ -63,7 +64,7 @@ export default function Detail(props){
                             <li>weight: {myPoke[0].weight}</li>     
                         </ul>
                         </div>
-                    </div>: <h3>Loading...</h3>
+                    </div>: <Loader/>
             }
         </div>
     )

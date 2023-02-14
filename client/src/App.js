@@ -8,6 +8,7 @@ import Modified from './components/Modified/Modified';
 import Favs from './components/Favs/Favs';
 
 function App() {
+  
   return (
     <BrowserRouter>
       <div className="App">
