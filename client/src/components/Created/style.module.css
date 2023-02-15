@@ -2,9 +2,11 @@
 .h1{
     display: none;
 }
-    
+  
 }
-
+.h1{
+    cursor: pointer;
+}
 .divHome{
     -webkit-box-shadow: 10px 10px 15px 0px rgba(0,0,0,1);
     -moz-box-shadow: 10px 10px 15px 0px rgba(0,0,0,1);
@@ -40,7 +42,9 @@
 .link{
     text-decoration: none;
     color: black;
+    font-size: 30px;
 }
+
 .link:hover{
     transform: translateY(2px);
     color: white;

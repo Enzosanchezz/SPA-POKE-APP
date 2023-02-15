@@ -42,15 +42,17 @@ export default function Detail(props){
                     <div className={style.details}>
                         
                         <div  >
+                        <div className={style.btnEditStar} >
 
+                       
                          {myPoke[0].createdInDb == true ?
-                        <Link to={`/pokemons/${props.match.params.id}`} className={style.link} ><AiFillEdit/></Link> :
+                        <Link to={`/pokemons/${props.match.params.id}`} className={style.linkEdit} ><AiFillEdit/></Link> :
                         null}
                         {
                             pokeFav.length > 0 && pokeFav.find((p) => p.id == (myPoke[0].id)) ? null :
                             <button onClick={handleFavs} className={style.star} >⭐</button>
                         }
-                        
+                         </div>
                         <h1>{myPoke[0].name}</h1>
                         {myPoke[0].img ? <img className= {style.img} src={myPoke[0].img} alt={myPoke[0].name} /> : 
                         <img className= {style.img} src="https://http2.mlstatic.com/D_NQ_NP_656546-MLB31843488813_082019-O.jpg" alt="pokemon" />} 

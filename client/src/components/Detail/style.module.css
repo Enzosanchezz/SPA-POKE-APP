@@ -9,15 +9,20 @@
     }
     
 }
-  
-
 .link{
     text-decoration: none;
     color: black;
 }
+.linkEdit{
+    text-decoration: none;
+    color: black;
+    font-size: 23px;
+    filter:invert(0.8)
+}
 .linkReturn{
     text-decoration: none;
     color: black;
+    font-size: 30px;
 }
 .linkReturn:hover{
     transform: translateY(2px);
@@ -91,5 +96,11 @@
     cursor: pointer;
     border: transparent;
     background: transparent;
+    font-size: 18px;
+}
+.btnEditStar{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
