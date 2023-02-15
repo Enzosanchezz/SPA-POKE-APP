@@ -1,8 +1,4 @@
-@media (max-width: 700px) {
-   .h2{
-       display: none;
-   }
-}
+
 
 .conteiner{
     width: 100%;
@@ -66,4 +62,56 @@
  .link{
    text-decoration: none;
    color: black;
+}
+.link:hover{
+   transform: translateY(2px);
+   color: white;
+}
+.spanPikachu{
+   
+      display: flex;
+      text-align: center;
+      align-items: center;
+      position: relative;
+      top: -454px;
+      left: 81px;
+      width: 120px;
+      height: 80px;
+      background-color: rgba(255, 208, 0);
+      border-radius: 25px;
+}
+.spanPikachu:before{
+      content: "";
+      position: absolute;
+      top: 65px;
+      left: 95px;
+      width: 0px;
+      height: 0px;
+      border-top: 20px solid rgba(255, 208, 0);
+      border-right: 20px solid transparent;
+      border-left: 20px solid transparent;
+      transform: rotate(75deg);
+}
+@media (max-width: 700px) {
+   .h2{
+       display: none;
+   }
+   .pika{
+   width: 300px;
+   margin-top: 100px;
+
+   }
+   .spanPikachu{
+      
+      display: flex;
+      text-align: center;
+      align-items: center;
+      position: relative;
+      top: -320px;
+      left: 0px;
+      width: 130px;
+      height: 80px;
+      background-color: rgba(255, 208, 0);
+      border-radius: 25px;
+   }
 }

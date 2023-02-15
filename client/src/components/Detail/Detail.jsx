@@ -6,7 +6,7 @@ import { addFav, detailPoke, putPokemon } from "../../actions";
 import Modified from "../Modified/Modified";
 import style from "./style.module.css";
 import { BsStarFill } from "react-icons/bs";
-import { BsArrowLeft } from "react-icons/bs";
+import { IoReturnDownBackOutline } from "react-icons/io5";
 import { AiFillEdit } from "react-icons/ai";
 import Loader from "../loader/Loader";
 
@@ -29,13 +29,13 @@ export default function Detail(props){
     return(
         <div>
             <span className={style.span} >
+                <Link to={"/home"} className={style.linkReturn} ><IoReturnDownBackOutline/></Link>
                 <div className={style.divF} >
 
                 <Link to={"/favs"} className={style.link} >
                     <button className={style.boton} >Favoritos</button>
                 </Link>
                 </div>
-                <Link to={"/home"} className={style.link} ><BsArrowLeft/></Link>
             </span>
             {
                     myPoke.length > 0 ? 
