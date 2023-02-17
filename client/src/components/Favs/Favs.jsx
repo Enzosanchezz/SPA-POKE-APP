@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import { deleteFav } from "../../actions";
 import style from "./style.module.css";
 import pikachu from "../../assets/pikachu-enojado.gif"
+import pokebola from "../../assets/pokebola.png"
 
 export default function Favs(){
     const dispatch = useDispatch();
@@ -33,6 +34,7 @@ export default function Favs(){
           })
         
     }
+    // console.log('myPoke', myPoke)
         
 return(
     <div>
@@ -42,7 +44,7 @@ return(
                 <h2 className={style.h2} >Pokemons favoritos</h2>
      </span>
      <div className={style.conteiner} >
-             
+        
         {
             myPoke.length ?  
             myPoke.map((p) =>
@@ -52,7 +54,11 @@ return(
                         <button onClick={handleDelFavs} id={p.id} className={style.btnDel} >✖️​</button>
                     </div>
                     <h1>{p.name}</h1>
-                    <img className={style.img} src={p.img} alt={p.name} />
+                    {
+                    p.img ? 
+                    <img className={style.img} src={p.img} alt={p.name} /> :
+                    <img className= {style.imgF} src={pokebola} alt="pokebola" />
+                    }
                 </div>
             </div>  
             ) : 

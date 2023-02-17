@@ -22,6 +22,8 @@ switch(action.type){
     case "POST_POKEMON": return{...state}
 
     case "PUT_POKEMON" : return {...state}
+    
+    case "DELETE_POKEMON" : return {...state, details : []}
 
     case "ADD_FAV" : return {...state, favs : [...state.favs.concat(action.payload)]}
 

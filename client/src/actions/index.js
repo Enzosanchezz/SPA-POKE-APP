@@ -55,6 +55,12 @@ export function putPokemon(id, payload){
         return dispatch({type: "PUT_POKEMON", putPoke})
     }
 }
+export function DeletePokemon(id, payload){
+    return async function(dispatch){
+        let deletePoke = await axios.delete(`${REACT_APP_SERVER}/pokemons/${id}`, payload)
+        return dispatch({type: "DELETE_POKEMON", deletePoke})
+    }
+}
 
 export function filterCreated(payload){
     return{

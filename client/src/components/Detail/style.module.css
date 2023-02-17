@@ -7,6 +7,10 @@
     .link{
        height: 20px;
     }
+    .imgD{
+        width: 220px;
+        height: 220px;
+    }
     
 }
 .link{
@@ -68,7 +72,11 @@
     display: contents;
 }
 .img{
-    width: 100%;
+    width: 95%;
+    height: 100%;
+}
+.imgD{
+    width: 60%;
     height: 100%;
 }
 .btnx{
@@ -103,4 +111,17 @@
     justify-content: center;
     align-items: flex-start;
 }
+.delete{
+    display: flex;
+    justify-content: end;
+    margin: 2px;
+ }
+ .btnDelete{
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    cursor: pointer; 
+    border: none;
+    background: none;
+    filter : invert(0.8)
+ }
 

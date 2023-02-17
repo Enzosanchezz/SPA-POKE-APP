@@ -14,7 +14,6 @@ export default function Modified(props){
     }, [dispatch])
     
     const detail = useSelector((state) => state.details)
-    // console.log('detail :>> ', detail);
     const history = useHistory();
     const [errors, setErrors] = useState({})
     const [input, setInput] = useState({
