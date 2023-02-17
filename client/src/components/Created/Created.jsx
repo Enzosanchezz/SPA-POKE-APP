@@ -130,31 +130,31 @@ export default function Created(){
             
                
                     <label>Nombre*:</label>
-                    <input className={style.input} type="text" value={input.name} name="name" onChange={e =>  handleChange(e)}/>
+                    <input className={style.input} type="text" min={0} max={100} value={input.name} name="name" onChange={e =>  handleChange(e)}/>
                     {errors.name &&(<p>{errors.name}</p>)}
                
                 
                     <label>Imagen: </label>
-                    <input className={style.input} type="text" value={input.img} name="img" onChange={e =>  handleChange(e)}/>
+                    <input className={style.input} type="text" min={0} max={100} value={input.img} name="img" onChange={e =>  handleChange(e)}/>
                
                     <label>Vida:</label>
-                    <input className={style.input} type="number"  value={input.hp} name="hp" onChange={e =>  handleChange(e) }/>
+                    <input className={style.input} type="number" min={0} max={100}  value={input.hp} name="hp" onChange={e =>  handleChange(e) }/>
                     {errors.hp && <p>{errors.hp}</p>}
                 
                     <label>Ataque: </label>
-                    <input className={style.input} type="number"  value={input.attack} name="attack" onChange={e =>  handleChange(e)}/>
+                    <input className={style.input} type="number" min={0} max={100}  value={input.attack} name="attack" onChange={e =>  handleChange(e)}/>
                     {errors.attack && <p>{errors.attack}</p>}
               
                     <label>Defensa:</label>
-                    <input className={style.input} type="number"  value={input.defense} name="defense" onChange={e =>  handleChange(e)}/>
+                    <input className={style.input} type="number" min={0} max={100}  value={input.defense} name="defense" onChange={e =>  handleChange(e)}/>
                     {errors.defense && <p>{errors.defense}</p> }
                
                     <label>Velocidad:</label>
-                    <input className={style.input} type="number"  value={input.speed} name="speed" onChange={e =>  handleChange(e)}/>
+                    <input className={style.input} type="number" min={0} max={100}  value={input.speed} name="speed" onChange={e =>  handleChange(e)}/>
                     {errors.speed && <p>{errors.speed}</p> }
                 
                     <label>Altura:</label>
-                    <input className={style.input} type="number" value={input.height} name="height" onChange={e =>  handleChange(e)}/>
+                    <input className={style.input} type="number" min={0} max={100} value={input.height} name="height" onChange={e =>  handleChange(e)}/>
                     {errors.height && <p>{errors.height}</p> }
              
                     <label>Peso:</label>
