@@ -83,12 +83,12 @@ export default function Detail(props){
                         <img className= {style.imgD} src={pokebola} alt="pokemon" />} 
                         <ul className={style.li} >
                         <h4>{myPoke[0].types.map(t => t + " ")}</h4>
-                            <li>hp: {myPoke[0].hp}</li>
-                            <li>attack: {myPoke[0].attack}</li>
-                            <li>defense: {myPoke[0].defense}</li>
-                            <li>speed: {myPoke[0].speed}</li>
-                            <li>height: {myPoke[0].height}</li>
-                            <li>weight: {myPoke[0].weight}</li>     
+                            <li>vida: {myPoke[0].hp}</li>
+                            <li>ataque: {myPoke[0].attack}</li>
+                            <li>defensa: {myPoke[0].defense}</li>
+                            <li>velocidad: {myPoke[0].speed}</li>
+                            <li>altura: {myPoke[0].height}</li>
+                            <li>peso: {myPoke[0].weight}</li>     
                         </ul>
                         </div>
                     </div>: <Loader/>
