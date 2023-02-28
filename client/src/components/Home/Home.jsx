@@ -146,6 +146,7 @@ export default function Home(){
             } 
         </div>
             <button className={style.btn} onClick={(e) => prevPage(e)} ><AiFillFastBackward/></button>
+            <span>{page}</span>
             <button className={style.btn} onClick={(e) => nextPage(e)} ><AiFillFastForward/></button>
     </div>
     )
