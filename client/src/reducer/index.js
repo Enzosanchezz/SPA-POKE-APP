@@ -11,7 +11,7 @@ function rootReducer(state = initalState, action){
 switch(action.type){
     case "GET_POKEMONS": { return {...state, pokemons: action.payload, allPokemons: action.payload, }}
 
-    case "GET_NAME_POKEMON":{return {...state, pokemons: action.payload}}
+    case "GET_NAME_POKEMON":{return {...state, pokemons: action.payload, allPokemons: action.payload,}}
 
     case "GET_DETAILS": {return {...state, details : action.payload}}
 

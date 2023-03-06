@@ -84,7 +84,6 @@ export default function Home(){
         <div className={style.span} >
             {/* <div className={style.divHome} >
             </div> */}
-                <button className={style.botonVolverCargar} onClick={(e) => handleVolver(e)} >&nbsp;&nbsp;↻&nbsp;&nbsp;</button>
                 <Link to={"/pokemons"} className={style.creaPokemon} >
                 <button className={style.boton} >Crear un Pokemon</button>
                 </Link>
@@ -96,12 +95,12 @@ export default function Home(){
              </div>
         <div>
                 <select className={style.select} onChange={e => {handleOrder(e)}} >
-                    <option value= "alphabeticalOrder">Orden Alfabetico</option>
+                    {/* <option value= "alphabeticalOrder">Orden Alfabetico</option> */}
                     <option value= "asc">Ascendente A-Z</option>
                     <option value= "desc">Descendente Z-A</option>
                 </select>
                 <select className={style.select} onChange={e => {handleAttack(e)}}>
-                    <option value= "attack">Ataque</option>
+                    {/* <option value= "attack">Ataque</option> */}
                     <option value= "attackMin">Ataque Min</option>
                     <option value= "attackMax">Ataque Max</option>
                 </select>
@@ -117,6 +116,7 @@ export default function Home(){
                     <option value="created">Creados</option>
                     <option value="api">Api</option>
                 </select>
+                <button className={style.botonVolverCargar} onClick={(e) => handleVolver(e)} >Limpiar filtros</button>
                         <br />
                 
                 <Paginado 
