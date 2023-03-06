@@ -1,7 +1,6 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 const {REACT_APP_SERVER} = process.env;
-// const REACT_APP_SERVER = "http://localhost:3001"
 
 export function getPokemons(){
     return async function(dispatch){
